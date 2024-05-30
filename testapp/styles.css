@@ -224,10 +224,16 @@ footer {
 }
 
 /* Media Queries for mobile optimization */
+/* Mobile optimization */
 @media (max-width: 768px) {
     .hero {
         padding: 40px;
-        height: auto;
+        height: calc(100vh - 80px); /* Adjust height to occupy the full viewport minus header height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .hero h1 {
@@ -240,6 +246,32 @@ footer {
         font-size: 18px;
         margin-top: 10px;
         line-height: 1.4;
+    }
+
+    .how {
+        padding-top: 50px;
+    }
+
+    section {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .placeholders,
+    .waitlist,
+    .contact-us {
+        padding-top: 100vh; /* Add spacing to make user scroll */
+        padding-bottom: 50px;
+    }
+
+    .waitlist-input {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .waitlist-button {
+        padding: 10px 20px;
+        font-size: 16px;
     }
 
     header {
@@ -286,26 +318,22 @@ footer {
         margin: 5px 0;
     }
 
-    .features, .placeholder-container {
+    .features,
+    .placeholder-container {
         flex-direction: column;
         align-items: center;
     }
 
-    .feature, .placeholder {
+    .feature,
+    .placeholder {
         flex: 1 1 100%;
         margin: 10px 0;
     }
 
-    section {
-        padding: 50px 20px;
-    }
-
-    .how h2, .contact-us h2, .contact-us p {
+    .how h2,
+    .contact-us h2,
+    .contact-us p {
         font-size: 24px;
-    }
-
-    .waitlist {
-        padding: 100px 20px;
     }
 
     .waitlist h2 {
