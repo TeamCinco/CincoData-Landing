@@ -2,14 +2,14 @@ body {
     margin: 0;
     font-family: 'Source Sans 3', sans-serif;
     color: #0096ff;
-    background: linear-gradient(to bottom, #000, #444);
+    background: linear-gradient(to bottom, #000, #222, #444);
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px;
     background: #000;
 }
 
@@ -32,7 +32,7 @@ header {
     border: 1px solid #0096ff;
     border-radius: 5px;
     margin-right: 10px;
-    width: 300px; /* Increased width */
+    width: 300px;
 }
 
 .waitlist-button {
@@ -59,18 +59,18 @@ nav a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     text-align: center;
-    padding: 20px; /* Add padding */
+    padding: 40px; /* Increased padding */
 }
 
 .hero h1 {
-    font-size: 36px;
+    font-size: 48px; /* Increased font size */
     background: linear-gradient(70deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin: 0;
+    margin: 20px 0; /* Added margin */
 }
 
 .hero p {
@@ -88,7 +88,7 @@ section {
 }
 
 .how {
-    padding-top: 50px; /* Less padding to move it closer to p */
+    padding-top: 50px;
 }
 
 .how h2 {
@@ -97,7 +97,7 @@ section {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin-bottom: 50px; /* Adding space below the title */
+    margin-bottom: 50px;
 }
 
 .features {
@@ -107,18 +107,18 @@ section {
 }
 
 .feature {
-    padding: 10px 20px;
+    padding: 20px; /* Increased padding */
     font-size: 18px;
     background: linear-gradient(70deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin: 10px;
+    margin: 20px; /* Increased margin */
     text-align: center;
 }
 
 .placeholders {
-    padding: 50vh 20px; /* Half a page of padding at the top */
+    padding: 50vh 20px;
     text-align: center;
 }
 
@@ -128,20 +128,20 @@ section {
     justify-content: space-evenly;
     align-items: stretch;
     gap: 20px;
-    min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+    min-height: 100vh;
 }
 
 .placeholder {
     background: #222;
     border-radius: 10px;
-    padding: 20px;
-    flex: 1 1 calc(25% - 20px); /* Adjust width to fit 4 items in a row */
+    padding: 40px; /* Increased padding */
+    flex: 1 1 calc(25% - 40px); /* Adjust width to fit 4 items in a row */
     box-sizing: border-box;
     text-align: center;
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensure content is spread out */
+    justify-content: space-between;
 }
 
 .placeholder h3 {
@@ -153,11 +153,11 @@ section {
 .placeholder img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 20px; /* Space between image and next sub-header */
+    margin-bottom: 20px;
 }
 
 .contact-us {
-    padding-top: 200px; /* Added extra padding for space between sections */
+    padding-top: 200px;
 }
 
 .contact-us h2 {
@@ -186,8 +186,8 @@ footer {
 /* Specific styles for AI Assistant and Learning Resources sections */
 .placeholder-container.ai-assistant,
 .placeholder-container.learning-resources {
-    flex-direction: row; /* Arrange items horizontally */
-    justify-content: space-around; /* Distribute space evenly */
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .placeholder-container.learning-resources {
@@ -214,20 +214,20 @@ footer {
 /* Media Queries for mobile optimization */
 @media (max-width: 768px) {
     .hero {
-        padding: 20px;
-        height: auto; /* Adjust height for mobile */
+        padding: 40px;
+        height: auto;
     }
 
     .hero h1 {
-        font-size: 24px;
-        margin: 0;
-        line-height: 1.2; /* Adjust line height for better readability */
+        font-size: 32px;
+        margin: 20px 0;
+        line-height: 1.2;
     }
 
     .hero p {
         font-size: 18px;
         margin-top: 10px;
-        line-height: 1.2; /* Adjust line height for better readability */
+        line-height: 1.4;
     }
 
     header {
@@ -242,8 +242,8 @@ footer {
     }
 
     .waitlist-input {
-        width: 80%; /* Adjust width for mobile */
-        margin-bottom: 10px; /* Add space between input and button */
+        width: 80%;
+        margin-bottom: 10px;
     }
 
     nav {
@@ -252,7 +252,7 @@ footer {
 
     nav a {
         display: block;
-        margin: 5px 0; /* Stack navigation links */
+        margin: 5px 0;
     }
 
     .features, .placeholder-container {
@@ -261,7 +261,7 @@ footer {
     }
 
     .feature, .placeholder {
-        flex: 1 1 100%; /* Full width for features and placeholders */
+        flex: 1 1 100%;
         margin: 10px 0;
     }
 
