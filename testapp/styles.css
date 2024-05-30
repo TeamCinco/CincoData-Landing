@@ -11,6 +11,10 @@ header {
     align-items: center;
     padding: 20px;
     background: #000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -21,13 +25,31 @@ header {
     color: transparent;
 }
 
-nav a {
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
     margin: 0 10px;
     text-decoration: none;
     background: linear-gradient(70deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #0096ff;
+    margin: 4px 0;
+    transition: 0.4s;
 }
 
 .hero {
@@ -38,23 +60,23 @@ nav a {
     height: 100vh;
     text-align: center;
     padding: 40px;
+    margin-top: 80px; /* Adjust margin to account for fixed header */
 }
 
-.hero h1 {
-    font-size: 48px;
+.hero h1, .hero p, section h2, .feature, .placeholder h3, .contact-us h2, .contact-us p, .waitlist h2, .waitlist-input::placeholder {
     background: linear-gradient(70deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+.hero h1 {
+    font-size: 48px;
     margin: 20px 0;
 }
 
 .hero p {
     font-size: 24px;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
     margin-top: 20px;
 }
 
@@ -68,11 +90,7 @@ section {
 }
 
 .how h2 {
-    font-size: 32px;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    font-size: 48px; /* Increased font size for prominence */
     margin-bottom: 50px;
 }
 
@@ -84,11 +102,7 @@ section {
 
 .feature {
     padding: 20px;
-    font-size: 18px;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    font-size: 24px; /* Increased font size for features */
     margin: 20px;
     text-align: center;
 }
@@ -111,26 +125,19 @@ section {
     background: #222;
     border-radius: 10px;
     padding: 20px;
-    flex: 1 1 250px; /* Set minimum size to ensure squares */
-    max-width: 300px; /* Set maximum size to keep squares */
+    flex: 1 1 250px;
+    max-width: 300px;
     box-sizing: border-box;
     text-align: center;
-    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    aspect-ratio: 1 / 1; /* Ensures the boxes remain squares */
-}
-
-.placeholder h3 {
-    font-size: 24px;
-    color: #0096ff;
-    margin-bottom: 10px;
+    aspect-ratio: 1 / 1;
 }
 
 .placeholder img {
     max-width: 100%;
-    max-height: 70%; /* Ensure the image fits well within the square */
+    max-height: 70%;
     height: auto;
     margin-bottom: 10px;
 }
@@ -139,34 +146,18 @@ section {
     padding-top: 200px;
 }
 
-.contact-us h2 {
+.contact-us h2, .contact-us p {
     font-size: 32px;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.contact-us p {
-    font-size: 18px;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
 }
 
 .waitlist {
-    padding: 100vh 20px; /* Ensure it has enough padding to be spacious */
+    padding: 100vh 20px;
     text-align: center;
-    background: #111; /* Different background color to distinguish section */
+    background: #111;
 }
 
 .waitlist h2 {
     font-size: 36px;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
     margin-bottom: 50px;
 }
 
@@ -254,6 +245,25 @@ footer {
     header {
         flex-direction: column;
         align-items: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .waitlist-form {
