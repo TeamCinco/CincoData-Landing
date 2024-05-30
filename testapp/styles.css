@@ -21,30 +21,6 @@ header {
     color: transparent;
 }
 
-.waitlist-form {
-    display: flex;
-    align-items: center;
-}
-
-.waitlist-input {
-    padding: 10px;
-    font-size: 18px;
-    border: 1px solid #0096ff;
-    border-radius: 5px;
-    margin-right: 10px;
-    width: 300px;
-}
-
-.waitlist-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    color: #fff;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 nav a {
     margin: 0 10px;
     text-decoration: none;
@@ -61,16 +37,16 @@ nav a {
     align-items: center;
     height: 100vh;
     text-align: center;
-    padding: 40px; /* Increased padding */
+    padding: 40px;
 }
 
 .hero h1 {
-    font-size: 48px; /* Increased font size */
+    font-size: 48px;
     background: linear-gradient(70deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin: 20px 0; /* Added margin */
+    margin: 20px 0;
 }
 
 .hero p {
@@ -107,13 +83,13 @@ section {
 }
 
 .feature {
-    padding: 20px; /* Increased padding */
+    padding: 20px;
     font-size: 18px;
     background: linear-gradient(70deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin: 20px; /* Increased margin */
+    margin: 20px;
     text-align: center;
 }
 
@@ -134,8 +110,8 @@ section {
 .placeholder {
     background: #222;
     border-radius: 10px;
-    padding: 40px; /* Increased padding */
-    flex: 1 1 calc(25% - 40px); /* Adjust width to fit 4 items in a row */
+    padding: 40px;
+    flex: 1 1 calc(25% - 40px);
     box-sizing: border-box;
     text-align: center;
     color: #fff;
@@ -174,6 +150,48 @@ section {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+.waitlist {
+    padding: 100vh 20px; /* Ensure it has enough padding to be spacious */
+    text-align: center;
+    background: #111; /* Different background color to distinguish section */
+}
+
+.waitlist h2 {
+    font-size: 36px;
+    background: linear-gradient(70deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 50px;
+}
+
+.waitlist-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.waitlist-input {
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #0096ff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.waitlist-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(70deg, #00c6ff, #0072ff);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 footer {
@@ -271,5 +289,23 @@ footer {
 
     .how h2, .contact-us h2, .contact-us p {
         font-size: 24px;
+    }
+
+    .waitlist {
+        padding: 100px 20px;
+    }
+
+    .waitlist h2 {
+        font-size: 28px;
+    }
+
+    .waitlist-input {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .waitlist-button {
+        padding: 10px 20px;
+        font-size: 16px;
     }
 }
