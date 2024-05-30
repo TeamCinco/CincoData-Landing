@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Source Sans 3', sans-serif;
     color: #0096ff;
-    background: linear-gradient(to bottom, #000000, #333333, #555555, #777777);
+    background: linear-gradient(to bottom, #000, #444);
 }
 
 header {
@@ -85,7 +85,6 @@ nav a {
 section {
     padding: 100px 20px;
     text-align: center;
-    background: #555555; /* Add background color for sections */
 }
 
 .how {
