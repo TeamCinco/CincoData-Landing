@@ -125,29 +125,45 @@ section {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: stretch;
-    gap: 20px;
+    gap: 45vh; /* Increased gap to create more space between placeholders */
     min-height: 100vh;
+    margin-bottom: 35vh; /* Added margin to create space between containers */
+}
+
+.placeholder-container h2 {
+    font-size: 940px; /* Increased font size for section titles 3x larger */
+    background: linear-gradient(70deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 50px;
 }
 
 .placeholder {
-    background: #222;
-    border-radius: 10px;
-    padding: 20px;
-    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 300px;
     max-width: 300px;
     box-sizing: border-box;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    aspect-ratio: 1 / 1;
+    color: #fff; /* White text color for contrast */
 }
 
 .placeholder img {
     max-width: 100%;
-    max-height: 70%;
     height: auto;
-    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.placeholder h3 {
+    font-size: 32px; /* Adjusted font size for titles within placeholders */
+    margin: 20px 0;
+    background: linear-gradient(70deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .contact-us {
@@ -206,29 +222,16 @@ footer {
 /* Specific styles for AI Assistant and Learning Resources sections */
 .placeholder-container.ai-assistant,
 .placeholder-container.learning-resources {
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.placeholder-container.learning-resources {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 75vh; /* Increased gap for more space */
 }
 
 .placeholder-container.learning-resources .placeholder {
-    flex: 1;
-}
-
-.placeholder-container.learning-resources .placeholder:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-}
-
-.placeholder-container.learning-resources .placeholder:nth-child(2) {
-    grid-column: 2;
-    grid-row: 1 / span 2;
+    flex: 1 1 300px; /* Ensure consistency with other sections */
+    max-width: 300px;
 }
 
 /* Media Queries for mobile optimization */
@@ -355,5 +358,9 @@ footer {
     .waitlist-button {
         padding: 10px 20px;
         font-size: 16px;
+    }
+
+    .placeholder-container h2 {
+        font-size: 72px; /* Adjust font size for mobile */
     }
 }
