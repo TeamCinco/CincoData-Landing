@@ -1,5 +1,6 @@
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
+const logoBtn = document.getElementById('logo-btn');
 
 // Toggle mobile menu
 mobileMenu.addEventListener('click', () => {
@@ -25,4 +26,9 @@ document.querySelector('a[href="#login"]').addEventListener('click', (event) => 
     const waitlistSection = document.querySelector('.waitlist');
     waitlistSection.scrollIntoView({ behavior: 'smooth' });
     waitlistSection.querySelector('.waitlist-input').focus();
+});
+
+// Scroll to top when logo is clicked
+logoBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });

@@ -17,6 +17,14 @@ header {
     z-index: 1000;
 }
 
+.logo-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
 .logo {
     font-size: 24px;
     background: linear-gradient(70deg, #00c6ff, #0072ff);
@@ -224,7 +232,6 @@ footer {
 }
 
 /* Media Queries for mobile optimization */
-/* Mobile optimization */
 @media (max-width: 768px) {
     .hero {
         padding: 40px;
