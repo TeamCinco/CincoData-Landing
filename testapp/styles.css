@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Source Sans 3', sans-serif;
     color: #0096ff;
-    background: linear-gradient(to bottom, #000, #444);
+    background: linear-gradient(to bottom, #000000, #333333, #555555, #777777);
 }
 
 header {
@@ -11,6 +11,7 @@ header {
     align-items: center;
     padding: 10px 20px;
     background: #000;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .logo {
@@ -62,6 +63,7 @@ nav a {
     height: 100vh; /* Full viewport height */
     text-align: center;
     padding: 20px; /* Add padding */
+    background: linear-gradient(to bottom, #000000, #222222, #444444, #666666); /* More pronounced gradient */
 }
 
 .hero h1 {
@@ -85,6 +87,7 @@ nav a {
 section {
     padding: 100px 20px;
     text-align: center;
+    background: #555555; /* Add background color for sections */
 }
 
 .how {
@@ -213,23 +216,6 @@ footer {
 
 /* Media Queries for mobile optimization */
 @media (max-width: 768px) {
-    .hero {
-        padding: 20px;
-        height: auto; /* Adjust height for mobile */
-    }
-
-    .hero h1 {
-        font-size: 24px;
-        margin: 0;
-        line-height: 1.2; /* Adjust line height for better readability */
-    }
-
-    .hero p {
-        font-size: 18px;
-        margin-top: 10px;
-        line-height: 1.2; /* Adjust line height for better readability */
-    }
-
     header {
         flex-direction: column;
         align-items: center;
@@ -247,12 +233,31 @@ footer {
     }
 
     nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
         margin-top: 10px;
     }
 
     nav a {
-        display: block;
-        margin: 5px 0; /* Stack navigation links */
+        margin: 5px; /* Adjust margin for mobile */
+    }
+
+    .hero {
+        padding: 20px;
+        height: auto; /* Adjust height for mobile */
+    }
+
+    .hero h1 {
+        font-size: 24px;
+        margin: 0;
+        line-height: 1.2; /* Adjust line height for better readability */
+    }
+
+    .hero p {
+        font-size: 18px;
+        margin-top: 10px;
+        line-height: 1.2; /* Adjust line height for better readability */
     }
 
     .features, .placeholder-container {
