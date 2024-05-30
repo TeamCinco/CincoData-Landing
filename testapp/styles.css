@@ -152,9 +152,9 @@ section {
 }
 
 .placeholder img {
-    max-width: auto;
-    height: 200px;
-    margin-top: 300px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
 }
 
 .placeholder h3 {
@@ -236,6 +236,10 @@ footer {
 
 /* Media Queries for mobile optimization */
 @media (max-width: 768px) {
+    body {
+        padding: 0 10px;
+    }
+
     .hero {
         padding: 40px;
         height: calc(100vh - 80px); /* Adjust height to occupy the full viewport minus header height */
