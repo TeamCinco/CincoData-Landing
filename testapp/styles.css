@@ -61,6 +61,7 @@ nav a {
     align-items: center;
     height: 100vh; /* Full viewport height */
     text-align: center;
+    padding: 20px; /* Add padding */
 }
 
 .hero h1 {
@@ -70,10 +71,6 @@ nav a {
     background-clip: text;
     color: transparent;
     margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .hero p {
@@ -82,7 +79,7 @@ nav a {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin-top: 100vh; /* Ensure it's below the fold */
+    margin-top: 20px;
 }
 
 section {
@@ -212,4 +209,36 @@ footer {
 .placeholder-container.learning-resources .placeholder:nth-child(2) {
     grid-column: 2;
     grid-row: 1 / span 2;
+}
+
+/* Media Queries for mobile optimization */
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 20px;
+        height: auto; /* Adjust height for mobile */
+    }
+
+    .hero h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .hero p {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .features, .placeholder-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature, .placeholder {
+        flex: 1 1 100%; /* Full width for features and placeholders */
+        margin: 10px 0;
+    }
+
+    .waitlist-input {
+        width: auto; /* Adjust width for mobile */
+    }
 }
