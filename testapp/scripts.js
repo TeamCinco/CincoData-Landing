@@ -32,3 +32,20 @@ document.querySelector('a[href="#login"]').addEventListener('click', (event) => 
 logoBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Scroll to specific sections in the 'how' section
+document.querySelector('.feature:nth-child(1)').addEventListener('click', () => {
+    document.querySelector('.ai-assistant').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('.feature:nth-child(2)').addEventListener('click', () => {
+    document.querySelector('.placeholder img[alt="Live data strategies"]').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('.feature:nth-child(3)').addEventListener('click', () => {
+    document.querySelector('.placeholder img[alt="Clear explanations"]').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('.feature:nth-child(4)').addEventListener('click', () => {
+    document.querySelector('.placeholder img[alt="Expert partnerships"]').scrollIntoView({ behavior: 'smooth' });
+});
