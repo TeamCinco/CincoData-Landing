@@ -11,7 +11,6 @@ header {
     align-items: center;
     padding: 10px 20px;
     background: #000;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .logo {
@@ -63,7 +62,6 @@ nav a {
     height: 100vh; /* Full viewport height */
     text-align: center;
     padding: 20px; /* Add padding */
-    background: linear-gradient(to bottom, #000000, #222222, #444444, #666666); /* More pronounced gradient */
 }
 
 .hero h1 {
@@ -216,6 +214,23 @@ footer {
 
 /* Media Queries for mobile optimization */
 @media (max-width: 768px) {
+    .hero {
+        padding: 20px;
+        height: auto; /* Adjust height for mobile */
+    }
+
+    .hero h1 {
+        font-size: 24px;
+        margin: 0;
+        line-height: 1.2; /* Adjust line height for better readability */
+    }
+
+    .hero p {
+        font-size: 18px;
+        margin-top: 10px;
+        line-height: 1.2; /* Adjust line height for better readability */
+    }
+
     header {
         flex-direction: column;
         align-items: center;
@@ -233,31 +248,12 @@ footer {
     }
 
     nav {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
         margin-top: 10px;
     }
 
     nav a {
-        margin: 5px; /* Adjust margin for mobile */
-    }
-
-    .hero {
-        padding: 20px;
-        height: auto; /* Adjust height for mobile */
-    }
-
-    .hero h1 {
-        font-size: 24px;
-        margin: 0;
-        line-height: 1.2; /* Adjust line height for better readability */
-    }
-
-    .hero p {
-        font-size: 18px;
-        margin-top: 10px;
-        line-height: 1.2; /* Adjust line height for better readability */
+        display: block;
+        margin: 5px 0; /* Stack navigation links */
     }
 
     .features, .placeholder-container {
