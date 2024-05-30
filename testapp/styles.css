@@ -110,14 +110,16 @@ section {
 .placeholder {
     background: #222;
     border-radius: 10px;
-    padding: 40px;
-    flex: 1 1 calc(25% - 40px);
+    padding: 20px;
+    flex: 1 1 250px; /* Set minimum size to ensure squares */
+    max-width: 300px; /* Set maximum size to keep squares */
     box-sizing: border-box;
     text-align: center;
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    aspect-ratio: 1 / 1; /* Ensures the boxes remain squares */
 }
 
 .placeholder h3 {
@@ -128,8 +130,9 @@ section {
 
 .placeholder img {
     max-width: 100%;
+    max-height: 70%; /* Ensure the image fits well within the square */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .contact-us {
