@@ -190,18 +190,39 @@ section {
     border-bottom: 5px solid #444;
 }
 
+.feature-content {
+    font-size: 30px; /* Adjust the font size as needed */
+    font-weight: bold; /* Optional: makes the text bold */
+    color: #000; /* Optional: adjust color if needed */
+}
+
 .features {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .feature {
-    padding: 20px;
-    font-size: 40px;
-    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
     text-align: center;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 200px; /* Adjust the height as needed */
 }
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
 
 .placeholders {
     padding: 100px 20px;
