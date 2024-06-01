@@ -49,3 +49,6 @@ document.querySelector('.feature:nth-child(3)').addEventListener('click', () => 
 document.querySelector('.feature:nth-child(4)').addEventListener('click', () => {
     document.querySelector('.placeholder img[alt="Expert partnerships"]').scrollIntoView({ behavior: 'smooth' });
 });
+
+
+//testting
