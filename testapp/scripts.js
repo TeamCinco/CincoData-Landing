@@ -10,6 +10,15 @@ mobileMenu.addEventListener('click', () => {
 
 
 
+window.addEventListener('scroll', () => {
+    const shapes = document.querySelectorAll('.shape');
+    const scrollPosition = window.scrollY;
+
+    shapes.forEach((shape, index) => {
+        const speed = (index + 1) * 0.5; // Different speed for each shape
+        shape.style.transform = `translateY(${scrollPosition * speed}px)`;
+    });
+});
 
 
 
