@@ -54,11 +54,9 @@ document.querySelector('.feature:nth-child(4)').addEventListener('click', () => 
 document.getElementById('waitlist-form').addEventListener('submit', function(event) {
     event.preventDefault();
     var email = document.getElementById('email-input').value;
-    var uniqueId = document.getElementById('unique-id-input').value;
-    var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe-JUl-RvQEM_0F3dDQ9GXRpdMe-XJrL-XBNbbVYZasw4ZiJQ/formResponse';
+    var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe-JUl-RvQEM_0F3dDQ9GXRpdMe-XJrL-XBNbbVYZasw4ZiJQ/viewform?usp=sf_link';
     var formData = new FormData();
     formData.append('entry.1761605893', email); // Replace with your actual email entry ID
-    formData.append('entry.UNIQUE_ID_ENTRY_ID', uniqueId); // Replace with your actual unique ID entry ID
 
     fetch(formUrl, {
         method: 'POST',
