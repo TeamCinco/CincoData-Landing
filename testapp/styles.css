@@ -2,8 +2,7 @@ body {
     margin: 0;
     font-family: 'Source Sans 3', sans-serif;
     color: #0096ff;
-    margin: 20px 0;
-    background: #000;
+    background: #fff;
 }
 
 header {
@@ -11,12 +10,17 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background: #000;
+    background: #fff;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     box-sizing: border-box;
+}
+
+.hero, .how, .placeholders, .contact-us, .waitlist {
+    background: #fff;
+    color: #000;
 }
 
 .logo-btn {
@@ -28,39 +32,17 @@ header {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 35px;
     background: linear-gradient(70deg, #00c6ff, #00469c);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
 .nav-links a {
     margin: 0;
     text-decoration: none;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle .bar {
-    height: 3px;
-    width: 25px;
-    background-color: #0096ff;
-    margin: 4px 0;
-    transition: 0.4s;
+    color: #0096ff;
 }
 
 .hero {
@@ -75,20 +57,66 @@ header {
     border-bottom: 5px solid #444;
 }
 
-.hero h1, .hero p, section h2, .feature, .contact-us h2, .contact-us p, .waitlist h2, .waitlist-input::placeholder {
+.hero h1, .hero p, .how h2 {
+    font-size: 100px;
+    margin: 20px 0;
+    background: linear-gradient(70deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.hero h1 {
+    font-size: 100px;
+    margin: 20px 0;
+    background: linear-gradient(70deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.hero .highlight {
+    display: inline-block;
+    transition: transform 0.3s ease;
     background: linear-gradient(70deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
-.hero h1 {
-    font-size: 80px;
-    margin: 20px 0;
+.hero .highlight:hover {
+    transform: scale(1.1);
 }
 
 .hero p {
+    font-size: 50px;
+    margin-top: 20px;
+    background: linear-gradient(70deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.hero p:hover {
+    transform: scale(1.1);
+}
+
+.placeholder-container h2 {
     font-size: 40px;
+    margin: 20px 0;
+    background: linear-gradient(70deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+
+
+.hero p {
+    font-size: 50px;
     margin-top: 20px;
 }
 
@@ -98,15 +126,9 @@ section {
 }
 
 .how {
-    background: #111;
     padding-top: 50px;
     border-top: 5px solid #444;
     border-bottom: 5px solid #444;
-}
-
-.how h2 {
-    font-size: 80px;
-    margin-bottom: 50px;
 }
 
 .features {
@@ -123,7 +145,6 @@ section {
 }
 
 .placeholders {
-    background: #000000;
     padding: 100px 20px;
     border-top: 5px solid #919191;
     border-bottom: 5px solid #919191;
@@ -138,14 +159,10 @@ section {
     margin-bottom: 200px;
 }
 
-.placeholders > h2 {
-    font-size: 80px;
-}
-
 .placeholder-container > h3 {
     font-size: 40px;
     margin: 20px 0;
-    color: #fff;
+    color: #000;
 }
 
 .placeholder {
@@ -156,11 +173,16 @@ section {
     max-width: 100%;
     box-sizing: border-box;
     text-align: left;
-    color: #fff;
-    border: 2px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(70deg, #00c6ff, #0072ff);
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.placeholder:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .placeholder img {
@@ -192,30 +214,15 @@ section {
     color: inherit;
 }
 
-.placeholder-container.pricing .placeholder ul li {
-    color: rgb(207, 62, 62);
-}
-
 .contact-us {
-    background: #111;
     padding-top: 200px;
     border-top: 5px solid #444;
 }
 
-.contact-us h2, .contact-us p {
-    font-size: 32px;
-}
-
 .waitlist {
-    background: #111;
     padding: 100vh 20px;
     text-align: center;
     border-top: 5px solid #444;
-}
-
-.waitlist h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
 }
 
 .waitlist-form {
@@ -248,7 +255,7 @@ section {
 footer {
     padding: 20px 20px;
     text-align: center;
-    background: #000;
+    background: #fff;
     color: #0096ff;
 }
 
@@ -279,15 +286,15 @@ footer {
     flex: 1 1 30%;
     max-width: 30%;
     text-align: left;
-    flex-direction: column; /* Ensure flex direction is column */
+    flex-direction: column;
 }
 
 .placeholder-container.pricing .placeholder h3 {
-    font-size: 40px; /* Ensure this matches your desired font size */
+    font-size: 40px;
     margin: 20px 0;
     -webkit-background-clip: text;
     background-clip: text;
-    color: #ffff;
+    color: #000;
     text-align: center;
     width: 100%;
 }
@@ -335,16 +342,6 @@ footer {
         padding-bottom: 50px;
     }
 
-    .waitlist-input {
-        width: 80%;
-        margin-bottom: 10px;
-    }
-
-    .waitlist-button {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-
     header {
         flex-direction: column;
         align-items: center;
@@ -375,7 +372,7 @@ footer {
         align-items: center;
         margin-top: 20px;
     }
-    
+
     .waitlist-input {
         padding: 15px;
         font-size: 18px;
@@ -385,9 +382,9 @@ footer {
         width: 80%;
         max-width: 400px;
         color: #fff;
-        background: #000;
+        background: #fff;
     }
-    
+
     .waitlist-button {
         padding: 15px 30px;
         font-size: 18px;
@@ -397,11 +394,6 @@ footer {
         border-radius: 5px;
         cursor: pointer;
     }
-    
-    
-    
-    
-    
 
     nav {
         margin-top: 10px;
