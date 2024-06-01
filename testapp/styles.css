@@ -169,8 +169,6 @@ section {
     margin-right: 20px;
 }
 
-
-
 .placeholder ul {
     list-style-type: disc;
     padding-left: 20px;
@@ -180,6 +178,10 @@ section {
 .placeholder ul li {
     font-size: 18px;
     margin: 10px 0;
+    background: linear-gradient(70deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .contact-us {
@@ -198,7 +200,6 @@ section {
     text-align: center;
     border-top: 5px solid #444;
 }
-
 
 .waitlist h2 {
     font-size: 40px;
