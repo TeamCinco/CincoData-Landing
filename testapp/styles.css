@@ -2,20 +2,21 @@ body {
     margin: 0;
     font-family: 'Source Sans 3', sans-serif;
     color: #0096ff;
-    background: linear-gradient(to bottom, #000, #222, #444);
+    margin: 20px 0;
+    background: #000;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Add padding to the sides */
+    padding: 0 20px;
     background: #000;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-sizing: border-box; /* Include padding in width calculation */
+    box-sizing: border-box;
 }
 
 .logo-btn {
@@ -36,7 +37,7 @@ header {
 
 .nav-links {
     display: flex;
-    gap: 20px; /* Add space between links */
+    gap: 20px;
 }
 
 .nav-links a {
@@ -70,10 +71,11 @@ header {
     height: 100vh;
     text-align: center;
     padding: 40px;
-    margin-top: 80px; /* Adjust margin to account for fixed header */
+    margin-top: 80px;
+    border-bottom: 5px solid #444;
 }
 
-.hero h1, .hero p, section h2, .feature, .placeholder h3, .contact-us h2, .contact-us p, .waitlist h2, .waitlist-input::placeholder {
+.hero h1, .hero p, section h2, .feature, .contact-us h2, .contact-us p, .waitlist h2, .waitlist-input::placeholder {
     background: linear-gradient(70deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
     background-clip: text;
@@ -81,12 +83,12 @@ header {
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 80px;
     margin: 20px 0;
 }
 
 .hero p {
-    font-size: 24px;
+    font-size: 40px;
     margin-top: 20px;
 }
 
@@ -96,11 +98,14 @@ section {
 }
 
 .how {
+    background: #111;
     padding-top: 50px;
+    border-top: 5px solid #444;
+    border-bottom: 5px solid #444;
 }
 
 .how h2 {
-    font-size: 48px; /* Increased font size for prominence */
+    font-size: 80px;
     margin-bottom: 50px;
 }
 
@@ -112,64 +117,75 @@ section {
 
 .feature {
     padding: 20px;
-    font-size: 24px; /* Increased font size for features */
+    font-size: 40px;
     margin: 20px;
     text-align: center;
 }
 
 .placeholders {
-    padding: 50vh 20px;
-    text-align: center;
+    background: #000000;
+    padding: 100px 20px;
+    border-top: 5px solid #919191;
+    border-bottom: 5px solid #919191;
 }
 
 .placeholder-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: stretch;
-    gap: 45vh; /* Increased gap to create more space between placeholders */
-    min-height: 100vh;
-    margin-bottom: 35vh; /* Added margin to create space between containers */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 200px;
 }
 
-.placeholder-container h2 {
-    font-size: 940px; /* Increased font size for section titles 3x larger */
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 50px;
+.placeholders > h2 {
+    font-size: 80px;
+}
+
+.placeholder-container > h3 {
+    font-size: 40px;
+    margin: 20px 0;
+    color: #fff;
 }
 
 .placeholder {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1 1 300px;
-    max-width: 300px;
+    flex: 1 1 100%;
+    max-width: 100%;
     box-sizing: border-box;
-    text-align: center;
-    color: #fff; /* White text color for contrast */
+    text-align: left;
+    color: #fff;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(70deg, #00c6ff, #0072ff);
+    padding: 20px;
 }
 
 .placeholder img {
-    max-width: 100%;
+    max-width: 45%;
     height: auto;
-    margin-top: 20px;
+    margin-right: 20px;
 }
 
-.placeholder h3 {
-    font-size: 32px; /* Adjusted font size for titles within placeholders */
-    margin: 20px 0;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+
+
+.placeholder ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.placeholder ul li {
+    font-size: 18px;
+    margin: 10px 0;
 }
 
 .contact-us {
+    background: #111;
     padding-top: 200px;
+    border-top: 5px solid #444;
 }
 
 .contact-us h2, .contact-us p {
@@ -177,13 +193,14 @@ section {
 }
 
 .waitlist {
+    background: #111;
     padding: 100vh 20px;
     text-align: center;
-    background: #111;
+    border-top: 5px solid #444;
 }
 
 .waitlist h2 {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 50px;
 }
 
@@ -221,22 +238,47 @@ footer {
     color: #0096ff;
 }
 
-/* Specific styles for AI Assistant and Learning Resources sections */
 .placeholder-container.ai-assistant,
 .placeholder-container.learning-resources {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: stretch;
-    gap: 75vh; /* Increased gap for more space */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .placeholder-container.learning-resources .placeholder {
-    flex: 1 1 300px; /* Ensure consistency with other sections */
-    max-width: 300px;
+    flex: 1 1 100%;
+    max-width: 100%;
 }
 
-/* Media Queries for mobile optimization */
+.placeholder-container.pricing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.placeholder-container.pricing .placeholder {
+    flex: 1 1 30%;
+    max-width: 30%;
+    text-align: left;
+    flex-direction: column; /* Ensure flex direction is column */
+}
+
+.placeholder-container.pricing .placeholder h3 {
+    font-size: 40px; /* Ensure this matches your desired font size */
+    margin: 20px 0;
+    background: linear-gradient(70deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     body {
         padding: 0 10px;
@@ -244,7 +286,7 @@ footer {
 
     .hero {
         padding: 40px;
-        height: calc(100vh - 80px); /* Adjust height to occupy the full viewport minus header height */
+        height: calc(100vh - 80px);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -276,7 +318,7 @@ footer {
     .placeholders,
     .waitlist,
     .contact-us {
-        padding-top: 100vh; /* Add spacing to make user scroll */
+        padding-top: 100vh;
         padding-bottom: 50px;
     }
 
@@ -367,6 +409,29 @@ footer {
     }
 
     .placeholder-container h2 {
-        font-size: 72px; /* Adjust font size for mobile */
+        font-size: 72px;
+    }
+
+    .placeholder {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .placeholder img {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .placeholder ul {
+        text-align: center;
+    }
+
+    .placeholder-container.pricing {
+        flex-direction: column;
+    }
+
+    .placeholder-container.pricing .placeholder {
+        max-width: 100%;
     }
 }
