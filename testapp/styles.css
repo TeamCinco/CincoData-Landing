@@ -99,9 +99,19 @@ header {
     transition: transform 0.3s ease;
 }
 
-.hero p:hover {
+
+
+.hero:hover .highlight,
+.hero:hover p {
     transform: scale(1.1);
 }
+
+.how h2:hover,
+.placeholder-container h3:hover {
+    transform: scale(1.1);
+}
+
+
 
 .placeholder-container h2 {
     font-size: 40px;

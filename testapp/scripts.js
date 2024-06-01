@@ -7,6 +7,17 @@ mobileMenu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+// Add hover effect to the hero section
+const heroSection = document.querySelector('.hero');
+
+function scaleHeroElements(scale) {
+    document.querySelector('.highlight').style.transform = `scale(${scale})`;
+    document.querySelector('.hero p').style.transform = `scale(${scale})`;
+}
+
+heroSection.addEventListener('mouseenter', () => scaleHeroElements(1.1));
+heroSection.addEventListener('mouseleave', () => scaleHeroElements(1));
+
 
 
 
