@@ -50,5 +50,24 @@ document.querySelector('.feature:nth-child(4)').addEventListener('click', () => 
     document.querySelector('.placeholder img[alt="Expert partnerships"]').scrollIntoView({ behavior: 'smooth' });
 });
 
+// Waitlist form submission
+document.getElementById('waitlist-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var email = document.getElementById('email-input').value;
+    var uniqueId = document.getElementById('unique-id-input').value;
+    var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe-JUl-RvQEM_0F3dDQ9GXRpdMe-XJrL-XBNbbVYZasw4ZiJQ/formResponse';
+    var formData = new FormData();
+    formData.append('entry.1234567890', email); // Replace with your actual email entry ID
+    formData.append('entry.0987654321', uniqueId); // Replace with your actual unique ID entry ID
 
-//testting
+    fetch(formUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+    }).then(function(response) {
+        alert('Thank you for joining our waitlist!');
+        document.getElementById('waitlist-form').reset();
+    }).catch(function(error) {
+        alert('There was an error. Please try again.');
+    });
+});
