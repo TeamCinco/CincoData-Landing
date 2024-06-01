@@ -29,7 +29,7 @@ header {
 
 .logo {
     font-size: 24px;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
+    background: linear-gradient(70deg, #00c6ff, #00469c);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -184,6 +184,14 @@ section {
     color: transparent;
 }
 
+.placeholder ul li.no-bullet {
+    list-style-type: none;
+    background: none;
+    -webkit-background-clip: inherit;
+    background-clip: inherit;
+    color: inherit;
+}
+
 .placeholder-container.pricing .placeholder ul li {
     color: rgb(207, 62, 62);
 }
@@ -283,8 +291,6 @@ footer {
     text-align: center;
     width: 100%;
 }
-
-
 
 @media (max-width: 768px) {
     body {
