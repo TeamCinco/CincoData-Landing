@@ -57,8 +57,8 @@ document.getElementById('waitlist-form').addEventListener('submit', function(eve
     var uniqueId = document.getElementById('unique-id-input').value;
     var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe-JUl-RvQEM_0F3dDQ9GXRpdMe-XJrL-XBNbbVYZasw4ZiJQ/formResponse';
     var formData = new FormData();
-    formData.append('entry.1234567890', email); // Replace with your actual email entry ID
-    formData.append('entry.0987654321', uniqueId); // Replace with your actual unique ID entry ID
+    formData.append('entry.YOUR_EMAIL_ENTRY_ID', email); // Replace with your actual email entry ID
+    formData.append('entry.YOUR_UNIQUE_ID_ENTRY_ID', uniqueId); // Replace with your actual unique ID entry ID
 
     fetch(formUrl, {
         method: 'POST',
