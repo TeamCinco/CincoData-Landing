@@ -273,10 +273,9 @@ footer {
 .placeholder-container.pricing .placeholder h3 {
     font-size: 40px; /* Ensure this matches your desired font size */
     margin: 20px 0;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    color: #ffff;
     text-align: center;
     width: 100%;
 }
