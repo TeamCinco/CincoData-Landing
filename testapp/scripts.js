@@ -18,9 +18,6 @@ function scaleHeroElements(scale) {
 heroSection.addEventListener('mouseenter', () => scaleHeroElements(1.1));
 heroSection.addEventListener('mouseleave', () => scaleHeroElements(1));
 
-
-
-
 window.addEventListener('scroll', () => {
     const shapes = document.querySelectorAll('.shape');
     const scrollPosition = window.scrollY;
@@ -30,8 +27,6 @@ window.addEventListener('scroll', () => {
         shape.style.transform = `translateY(${scrollPosition * speed}px)`;
     });
 });
-
-
 
 // Scroll to top when logo is clicked
 logoBtn.addEventListener('click', () => {
@@ -81,10 +76,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
         return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
         );
     }
 

@@ -5,7 +5,7 @@
 .placeholders:hover .placeholder img,
 .placeholders:hover .placeholder ul li {
     transform: scale(1.1); /* or any other transformation you want */
-    transition: transform 0.3s ease;
+    transition: transform 1.5s ease; /* Slowed down by 5x */
 }
 
 /* Original CSS */
@@ -128,7 +128,7 @@ header {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    transition: transform 0.3s ease;
+    transition: transform 1.5s ease; /* Slowed down by 5x */
 }
 
 /* Gradient Shapes */
@@ -148,7 +148,7 @@ header {
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     border-radius: 50%;
     opacity: 0.3;
-    animation: moveShapes 10s infinite;
+    animation: moveShapes 50s infinite; /* Slowed down by 5x */
 }
 
 .shape1 {
@@ -222,7 +222,7 @@ section {
     border-radius: 10px;
     position: relative;
     padding: 40px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 1.5s ease, box-shadow 1.5s ease; /* Slowed down by 5x */
     height: 200px; /* Adjust the height as needed */
     overflow: hidden;
     color: white; /* Ensure text is readable */
@@ -235,7 +235,7 @@ section {
 
 .feature.animated {
     transform: scale(1.1); /* Add your animation styles here */
-    transition: transform 0.3s ease;
+    transition: transform 1.5s ease; /* Slowed down by 5x */
 }
 
 .feature::before, .feature::after {
@@ -251,7 +251,7 @@ section {
     top: -50px;
     left: -50px;
     background: #4a4a4a; /* Light grey */
-    animation: moveShapes 12s infinite;
+    animation: moveShapes 60s infinite; /* Slowed down by 5x */
 }
 
 .feature::after {
@@ -260,7 +260,7 @@ section {
     bottom: -100px;
     right: -100px;
     background: #303030; /* Dark grey */
-    animation: moveShapes 15s infinite;
+    animation: moveShapes 75s infinite; /* Slowed down by 5x */
 }
 
 .placeholders {
@@ -299,7 +299,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 1.5s ease, box-shadow 1.5s ease; /* Slowed down by 5x */
 }
 
 .placeholder:hover {
