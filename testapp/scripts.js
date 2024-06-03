@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 placeholder.classList.add("carousel");
             } else {
                 placeholder.classList.remove("carousel");
+                placeholder.classList.add("fade-out");
             }
         });
     }
