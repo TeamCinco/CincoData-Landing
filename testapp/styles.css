@@ -222,10 +222,11 @@ section {
     border-radius: 10px;
     position: relative;
     padding: 40px;
-    transition: transform 1.5s ease, box-shadow 1.5s ease; /* Slowed down by 5x */
+    transition: transform 1.5s ease, box-shadow 1.5s ease, opacity 1.5s ease; /* Slowed down by 5x */
     height: 200px; /* Adjust the height as needed */
     overflow: hidden;
     color: white; /* Ensure text is readable */
+    opacity: 1;
 }
 
 .feature:hover {
@@ -233,9 +234,25 @@ section {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.feature.animated {
-    transform: scale(1.1); /* Add your animation styles here */
-    transition: transform 1.5s ease; /* Slowed down by 5x */
+.feature.carousel {
+    transform: translateX(0);
+    animation: carouselEffect 1.5s ease forwards; /* Slowed down by 5x */
+}
+
+.feature.fade-out {
+    opacity: 0;
+    transition: opacity 1.5s ease; /* Slowed down by 5x */
+}
+
+@keyframes carouselEffect {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .feature::before, .feature::after {
@@ -299,12 +316,23 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     border-radius: 10px;
-    transition: transform 1.5s ease, box-shadow 1.5s ease; /* Slowed down by 5x */
+    transition: transform 1.5s ease, box-shadow 1.5s ease, opacity 1.5s ease; /* Slowed down by 5x */
+    opacity: 1;
 }
 
 .placeholder:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.placeholder.carousel {
+    transform: translateX(0);
+    animation: carouselEffect 1.5s ease forwards; /* Slowed down by 5x */
+}
+
+.placeholder.fade-out {
+    opacity: 0;
+    transition: opacity 1.5s ease; /* Slowed down by 5x */
 }
 
 .placeholder img {

@@ -72,6 +72,7 @@ document.getElementById('waitlist-form').addEventListener('submit', function(eve
 
 document.addEventListener("DOMContentLoaded", function() {
     const features = document.querySelectorAll(".feature");
+    const placeholders = document.querySelectorAll(".placeholder-container");
 
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
@@ -81,24 +82,27 @@ document.addEventListener("DOMContentLoaded", function() {
         );
     }
 
-    function checkFeaturesInView() {
+    function checkElementsInView() {
         features.forEach(function(feature) {
             if (isElementInViewport(feature)) {
-                feature.classList.add("animated");
+                feature.classList.add("carousel");
+            } else {
+                feature.classList.remove("carousel");
+            }
+        });
+
+        placeholders.forEach(function(placeholder) {
+            if (isElementInViewport(placeholder)) {
+                placeholder.classList.add("carousel");
+            } else {
+                placeholder.classList.remove("carousel");
             }
         });
     }
 
     // Listen for scroll events
-    window.addEventListener("scroll", checkFeaturesInView);
+    window.addEventListener("scroll", checkElementsInView);
     
     // Initial check
-    checkFeaturesInView();
-
-    // Listen for click events
-    features.forEach(function(feature) {
-        feature.addEventListener("click", function() {
-            this.classList.add("animated");
-        });
-    });
+    checkElementsInView();
 });
