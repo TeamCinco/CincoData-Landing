@@ -193,6 +193,7 @@ section {
 
 .how {
     padding-top: 50px;
+    padding-bottom: 50px;
     border-top: 5px solid #444;
     border-bottom: 5px solid #444;
 }
@@ -258,7 +259,7 @@ section {
 }
 
 .placeholders {
-    padding: 100px 20px;
+    padding: 50px 20px; /* Reduced padding */
     border-top: 5px solid #919191;
     border-bottom: 5px solid #919191;
 }
@@ -442,7 +443,8 @@ footer {
     }
 
     .how {
-        padding-top: 50px;
+        padding-top: 20px; /* Reduced padding */
+        padding-bottom: 20px; /* Reduced padding */
     }
 
     section {
