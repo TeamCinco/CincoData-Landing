@@ -233,6 +233,11 @@ section {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+.feature.animated {
+    transform: scale(1.1); /* Add your animation styles here */
+    transition: transform 0.3s ease;
+}
+
 .feature::before, .feature::after {
     content: '';
     position: absolute;

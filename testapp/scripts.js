@@ -74,3 +74,38 @@ document.getElementById('waitlist-form').addEventListener('submit', function(eve
         alert('There was an error. Please try again.');
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const features = document.querySelectorAll(".feature");
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function checkFeaturesInView() {
+        features.forEach(function(feature) {
+            if (isElementInViewport(feature)) {
+                feature.classList.add("animated");
+            }
+        });
+    }
+
+    // Listen for scroll events
+    window.addEventListener("scroll", checkFeaturesInView);
+    
+    // Initial check
+    checkFeaturesInView();
+
+    // Listen for click events
+    features.forEach(function(feature) {
+        feature.addEventListener("click", function() {
+            this.classList.add("animated");
+        });
+    });
+});
