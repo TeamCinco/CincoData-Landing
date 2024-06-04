@@ -1,13 +1,3 @@
-/* Add this CSS to trigger animations simultaneously when hovering over the placeholders section */
-.placeholders:hover .placeholder-container h3,
-.placeholders:hover .placeholder,
-.placeholders:hover .placeholder-container h2,
-.placeholders:hover .placeholder img,
-.placeholders:hover .placeholder ul li {
-    transform: scale(1.1); /* or any other transformation you want */
-    transition: transform 1.5s ease; /* Slowed down by 5x */
-}
-
 /* Original CSS */
 
 body {
@@ -235,8 +225,8 @@ section {
 }
 
 .feature.carousel {
-    transform: translateX(0);
-    animation: carouselEffect 1.5s ease forwards; /* Slowed down by 5x */
+    transform: translateY(0);
+    animation: verticalCarouselEffect 1.5s ease forwards; /* Slowed down by 5x */
 }
 
 .feature.fade-out {
@@ -244,13 +234,13 @@ section {
     transition: opacity 1.5s ease; /* Slowed down by 5x */
 }
 
-@keyframes carouselEffect {
+@keyframes verticalCarouselEffect {
     0% {
-        transform: translateX(-100%);
+        transform: translateY(-100%);
         opacity: 0;
     }
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -293,6 +283,8 @@ section {
     align-items: center;
     gap: 20px;
     margin-bottom: 200px;
+    transition: opacity 1.5s ease; /* Slowed down by 5x */
+    opacity: 1;
 }
 
 .placeholder-container > h3 {
@@ -326,8 +318,8 @@ section {
 }
 
 .placeholder.carousel {
-    transform: translateX(0);
-    animation: carouselEffect 1.5s ease forwards; /* Slowed down by 5x */
+    transform: translateY(0);
+    animation: verticalCarouselEffect 1.5s ease forwards; /* Slowed down by 5x */
 }
 
 .placeholder.fade-out {

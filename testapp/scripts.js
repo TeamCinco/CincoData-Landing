@@ -7,17 +7,6 @@ mobileMenu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// Add hover effect to the hero section
-const heroSection = document.querySelector('.hero');
-
-function scaleHeroElements(scale) {
-    document.querySelector('.highlight').style.transform = `scale(${scale})`;
-    document.querySelector('.hero p').style.transform = `scale(${scale})`;
-}
-
-heroSection.addEventListener('mouseenter', () => scaleHeroElements(1.1));
-heroSection.addEventListener('mouseleave', () => scaleHeroElements(1));
-
 window.addEventListener('scroll', () => {
     const shapes = document.querySelectorAll('.shape');
     const scrollPosition = window.scrollY;
@@ -82,6 +71,14 @@ document.addEventListener("DOMContentLoaded", function() {
         );
     }
 
+    function isElementPartiallyInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            (rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.top >= 0) ||
+            (rect.bottom > 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+        );
+    }
+
     function checkElementsInView() {
         features.forEach(function(feature) {
             if (isElementInViewport(feature)) {
@@ -94,9 +91,13 @@ document.addEventListener("DOMContentLoaded", function() {
         placeholders.forEach(function(placeholder) {
             if (isElementInViewport(placeholder)) {
                 placeholder.classList.add("carousel");
+                placeholder.classList.remove("fade-out");
+            } else if (isElementPartiallyInViewport(placeholder)) {
+                placeholder.classList.add("fade-out");
+                placeholder.classList.remove("carousel");
             } else {
                 placeholder.classList.remove("carousel");
-                placeholder.classList.add("fade-out");
+                placeholder.classList.remove("fade-out");
             }
         });
     }
