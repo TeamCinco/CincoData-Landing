@@ -382,6 +382,8 @@ section {
     margin-bottom: 20px;
     width: 80%;
     max-width: 400px;
+    color: #ffffff; /* Set the font color to white */
+    background-color: #000000; /* Ensure the background color is black */
 }
 
 .waitlist-button {
@@ -523,8 +525,8 @@ footer {
         margin-bottom: 20px;
         width: 80%;
         max-width: 400px;
-        color: #fff;
-        background: #fff;
+        color: #ffffff; /* Set the font color to white */
+        background-color: #000000; /* Ensure the background color is black */
     }
 
     .waitlist-button {
