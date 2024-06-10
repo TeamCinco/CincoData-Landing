@@ -352,6 +352,11 @@ footer {
         padding: 0 10px;
     }
 
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .hero {
         padding: 40px;
         height: calc(100vh - 80px);
@@ -386,13 +391,8 @@ footer {
     .placeholders,
     .waitlist,
     .contact-us {
-        padding-top: 100vh;
+        padding-top: 50px;
         padding-bottom: 50px;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: center;
     }
 
     .menu-toggle {
@@ -626,4 +626,135 @@ footer {
 
 .placeholder-container.fade-in-right {
     animation: fadeInRight 1s forwards;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans 3', sans-serif;
+    color: #00469c;
+    background: #f0f8ff;
+}
+
+.logo {
+    font-size: 35px;
+    font-weight: bold;
+    background: linear-gradient(70deg, #00469c, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero h1, .hero p, .how h2 {
+    font-size: 100px;
+    margin: 20px 0;
+    background: linear-gradient(70deg, #00469c, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero h1 {
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 50px;
+    font-weight: normal;
+    margin-top: 20px;
+}
+
+.placeholder-container > h3 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+    background: linear-gradient(-40deg, #00469c, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.placeholder ul li {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 10px 0;
+    background: linear-gradient(70deg, #00469c, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.placeholder-container.pricing .placeholder h3 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+    background: linear-gradient(-40deg, #00469c, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.placeholder-container.pricing .placeholder ul li {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 10px 0;
+    background: none;
+    -webkit-background-clip: inherit;
+    background-clip: inherit;
+    color: inherit;
+}
+
+.waitlist-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(70deg, #00469c, #00c6ff);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    background-color: #f0f8ff;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: #00469c;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-control:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
