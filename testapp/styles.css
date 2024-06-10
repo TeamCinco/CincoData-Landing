@@ -758,3 +758,15 @@ body {
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
+
+
+
+.placeholder-container.pricing .placeholder h3 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+    background: linear-gradient(-40deg, #00469c, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
