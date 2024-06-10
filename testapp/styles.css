@@ -545,3 +545,101 @@ footer {
         max-width: 100%;
     }
 }
+
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+/* Background images for each carousel item */
+.carousel-container[data-bg="0"] {
+    background-image: url('images/background1.jpg');
+}
+
+.carousel-container[data-bg="1"] {
+    background-image: url('images/background2.jpg');
+}
+
+.carousel-container[data-bg="2"] {
+    background-image: url('images/background3.jpg');
+}
+
+.carousel-container[data-bg="3"] {
+    background-image: url('images/background4.jpg');
+}
+
+
+/* Add these styles to your existing CSS */
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.placeholder-container {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.placeholder-container.fade-in-left {
+    animation: fadeInLeft 1s forwards;
+}
+
+.placeholder-container.fade-in-right {
+    animation: fadeInRight 1s forwards;
+}

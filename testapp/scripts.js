@@ -66,3 +66,53 @@ document.getElementById('waitlist-form').addEventListener('submit', function(eve
         alert('There was an error. Please try again.');
     });
 });
+
+// Carousel functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const nextButton = document.querySelector('.carousel-control.next');
+    const carouselContainer = document.querySelector('.carousel-container');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+        carouselContainer.setAttribute('data-bg', currentIndex);
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselItems.length - 1;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex < carouselItems.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+
+    updateCarousel(); // Initialize carousel
+});
+
+// Intersection Observer for fade-in effect
+const placeholders = document.querySelectorAll('.placeholder-container');
+
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add(entry.target.dataset.direction);
+        } else {
+            entry.target.classList.remove(entry.target.dataset.direction); // Remove class if element is not in view
+        }
+    });
+}, observerOptions);
+
+placeholders.forEach((placeholder, index) => {
+    placeholder.dataset.direction = (index % 2 === 0) ? 'fade-in-left' : 'fade-in-right';
+    observer.observe(placeholder);
+});
