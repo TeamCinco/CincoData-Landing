@@ -18,6 +18,7 @@ function scaleHeroElements(scale) {
 heroSection.addEventListener('mouseenter', () => scaleHeroElements(1.1));
 heroSection.addEventListener('mouseleave', () => scaleHeroElements(1));
 
+// Scroll event listener for shapes
 window.addEventListener('scroll', () => {
     const shapes = document.querySelectorAll('.shape');
     const scrollPosition = window.scrollY;
@@ -34,20 +35,16 @@ logoBtn.addEventListener('click', () => {
 });
 
 // Scroll to specific sections in the 'how' section
-document.querySelector('.feature:nth-child(1)').addEventListener('click', () => {
-    document.querySelector('.ai-assistant').scrollIntoView({ behavior: 'smooth' });
-});
-
-document.querySelector('.feature:nth-child(2)').addEventListener('click', () => {
-    document.querySelector('.placeholder img[alt="Live data strategies"]').scrollIntoView({ behavior: 'smooth' });
-});
-
-document.querySelector('.feature:nth-child(3)').addEventListener('click', () => {
-    document.querySelector('.placeholder img[alt="Clear explanations"]').scrollIntoView({ behavior: 'smooth' });
-});
-
-document.querySelector('.feature:nth-child(4)').addEventListener('click', () => {
-    document.querySelector('.placeholder img[alt="Expert partnerships"]').scrollIntoView({ behavior: 'smooth' });
+document.querySelectorAll('.feature').forEach((feature, index) => {
+    feature.addEventListener('click', () => {
+        const targets = [
+            '.ai-assistant',
+            '.placeholder img[alt="Live data strategies"]',
+            '.placeholder img[alt="Clear explanations"]',
+            '.placeholder img[alt="Expert partnerships"]'
+        ];
+        document.querySelector(targets[index]).scrollIntoView({ behavior: 'smooth' });
+    });
 });
 
 // Waitlist form submission
@@ -68,54 +65,4 @@ document.getElementById('waitlist-form').addEventListener('submit', function(eve
     }).catch(function(error) {
         alert('There was an error. Please try again.');
     });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const features = document.querySelectorAll(".feature");
-    const placeholders = document.querySelectorAll(".placeholder-container");
-
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.bottom >= 0
-        );
-    }
-
-    function isElementPartiallyInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            (rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.top >= 0) ||
-            (rect.bottom > 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
-        );
-    }
-
-    function checkElementsInView() {
-        features.forEach(function(feature) {
-            if (isElementInViewport(feature)) {
-                feature.classList.add("carousel");
-            } else {
-                feature.classList.remove("carousel");
-            }
-        });
-
-        placeholders.forEach(function(placeholder) {
-            if (isElementInViewport(placeholder)) {
-                placeholder.classList.add("carousel");
-                placeholder.classList.remove("fade-out");
-            } else if (isElementPartiallyInViewport(placeholder)) {
-                placeholder.classList.add("fade-out");
-                placeholder.classList.remove("carousel");
-            } else {
-                placeholder.classList.remove("carousel");
-                placeholder.classList.remove("fade-out");
-            }
-        });
-    }
-
-    // Listen for scroll events
-    window.addEventListener("scroll", checkElementsInView);
-    
-    // Initial check
-    checkElementsInView();
 });
