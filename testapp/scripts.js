@@ -7,17 +7,6 @@ mobileMenu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// Add hover effect to the hero section
-const heroSection = document.querySelector('.hero');
-
-function scaleHeroElements(scale) {
-    document.querySelector('.highlight').style.transform = `scale(${scale})`;
-    document.querySelector('.hero p').style.transform = `scale(${scale})`;
-}
-
-heroSection.addEventListener('mouseenter', () => scaleHeroElements(1.1));
-heroSection.addEventListener('mouseleave', () => scaleHeroElements(1));
-
 // Scroll event listener for shapes
 window.addEventListener('scroll', () => {
     const shapes = document.querySelectorAll('.shape');
@@ -32,19 +21,6 @@ window.addEventListener('scroll', () => {
 // Scroll to top when logo is clicked
 logoBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Scroll to specific sections in the 'how' section
-document.querySelectorAll('.feature').forEach((feature, index) => {
-    feature.addEventListener('click', () => {
-        const targets = [
-            '.ai-assistant',
-            '.placeholder img[alt="Live data strategies"]',
-            '.placeholder img[alt="Clear explanations"]',
-            '.placeholder img[alt="Expert partnerships"]'
-        ];
-        document.querySelector(targets[index]).scrollIntoView({ behavior: 'smooth' });
-    });
 });
 
 // Waitlist form submission
@@ -67,32 +43,35 @@ document.getElementById('waitlist-form').addEventListener('submit', function(eve
     });
 });
 
-// Carousel functionality
+// Carousel functionality for placeholders
 document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel');
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    const prevButton = document.querySelector('.carousel-control.prev');
-    const nextButton = document.querySelector('.carousel-control.next');
-    const carouselContainer = document.querySelector('.carousel-container');
-    let currentIndex = 0;
+    const carousels = document.querySelectorAll('.carousel-container');
 
-    function updateCarousel() {
-        const offset = -currentIndex * 100;
-        carousel.style.transform = `translateX(${offset}%)`;
-        carouselContainer.setAttribute('data-bg', currentIndex);
-    }
+    carousels.forEach((carouselContainer, containerIndex) => {
+        const carousel = carouselContainer.querySelector('.carousel');
+        const carouselItems = carouselContainer.querySelectorAll('.carousel-item');
+        const prevButton = carouselContainer.querySelector('.carousel-control.prev');
+        const nextButton = carouselContainer.querySelector('.carousel-control.next');
+        let currentIndex = 0;
 
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselItems.length - 1;
-        updateCarousel();
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+            carouselContainer.setAttribute('data-bg', currentIndex);
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselItems.length - 1;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < carouselItems.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+
+        updateCarousel(); // Initialize carousel
     });
-
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex < carouselItems.length - 1) ? currentIndex + 1 : 0;
-        updateCarousel();
-    });
-
-    updateCarousel(); // Initialize carousel
 });
 
 // Intersection Observer for fade-in effect
@@ -115,4 +94,21 @@ const observer = new IntersectionObserver((entries) => {
 placeholders.forEach((placeholder, index) => {
     placeholder.dataset.direction = (index % 2 === 0) ? 'fade-in-left' : 'fade-in-right';
     observer.observe(placeholder);
+});
+
+// Intersection Observer for hero section
+const heroElements = document.querySelectorAll('.hero h1, .hero p');
+
+const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-top');
+        } else {
+            entry.target.classList.remove('fade-in-top'); // Remove class if element is not in view
+        }
+    });
+}, observerOptions);
+
+heroElements.forEach(element => {
+    heroObserver.observe(element);
 });

@@ -65,53 +65,28 @@ header {
     background-clip: text;
     color: transparent;
 }
+
 .hero h1 {
-    font-size: 100px;
-    margin: 20px 0;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: transform 0.3s ease;
     display: inline-block;
 }
 
 .hero .highlight {
     display: inline-block;
-    transition: transform 0.3s ease;
     background: linear-gradient(70deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-}
-
-.hero .highlight:hover {
-    transform: scale(1.1);
 }
 
 .hero p {
     font-size: 50px;
     margin-top: 20px;
-    background: linear-gradient(70deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: transform 0.3s ease;
-}
-
-
-
-.hero:hover .highlight,
-.hero:hover p {
-    transform: scale(1.1);
 }
 
 .how h2:hover,
 .placeholder-container h3:hover {
     transform: scale(1.1);
 }
-
-
 
 .placeholder-container h2 {
     font-size: 40px;
@@ -121,7 +96,6 @@ header {
     background-clip: text;
     color: transparent;
 }
-
 
 /* Gradient Shapes */
 .shapes {
@@ -173,12 +147,6 @@ header {
     }
 }
 
-
-.hero p {
-    font-size: 50px;
-    margin-top: 20px;
-}
-
 section {
     padding: 100px 20px;
     text-align: center;
@@ -191,9 +159,9 @@ section {
 }
 
 .feature-content {
-    font-size: 30px; /* Adjust the font size as needed */
-    font-weight: bold; /* Optional: makes the text bold */
-    color: #000; /* Optional: adjust color if needed */
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
 }
 
 .features {
@@ -214,15 +182,13 @@ section {
     padding: 40px;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 200px; /* Adjust the height as needed */
+    height: 200px;
 }
 
 .feature:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-
-
 
 .placeholders {
     padding: 100px 20px;
@@ -546,7 +512,7 @@ footer {
     }
 }
 
-
+/* Carousel Styles */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -606,9 +572,7 @@ footer {
     background-image: url('images/background4.jpg');
 }
 
-
-/* Add these styles to your existing CSS */
-
+/* Animation classes for fade-in effects */
 @keyframes fadeInLeft {
     0% {
         opacity: 0;
@@ -629,6 +593,26 @@ footer {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+@keyframes fadeInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1, .hero p {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero h1.fade-in-top, .hero p.fade-in-top {
+    animation: fadeInTop 1s forwards;
 }
 
 .placeholder-container {
